@@ -12,12 +12,21 @@ public class Runner {
         List<Integer> right = data.stream().map(Model::right).sorted().toList();
         int total = 0;
 
+        int similarity = 0;
+
         for(int i = 0; i < left.size(); i++) {
             int result = Math.abs(left.get(i) - right.get(i));
             total += result;
+            similarity += calulateSim(left.get(i), right);
         }
         //2192892
         System.out.println(total);
+        System.out.println(similarity);
 
+
+    }
+
+    public static int calulateSim(int left, List<Integer> right) {
+        return left * (int) right.stream().filter(i -> i == left).count();
     }
 }
