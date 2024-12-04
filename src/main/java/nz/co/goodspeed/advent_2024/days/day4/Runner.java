@@ -120,16 +120,6 @@ public class Runner {
         return val.equals("MS") || val.equals("SM");
     }
 
-    public static char[] isTrigger(char val) {
-        if(val == 'A') {
-            return "AS".toCharArray();
-        }
-        if(val == 'S') {
-            return "AM".toCharArray();
-        }
-        return null;
-    }
-
     public static class Movement {
         public int line;
         public int column;
