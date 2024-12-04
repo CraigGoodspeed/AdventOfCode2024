@@ -30,10 +30,6 @@ public class Runner {
                 }
             }
         }
-//59162863
-//58347230
-//62098619
-
         items.stream().map(Equation::doMath).reduce(Long::sum).ifPresent(System.out::println);
     }
 }
