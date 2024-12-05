@@ -5,6 +5,7 @@ public enum Days {
     Day2("Day2.txt"),
     Day3("Day3.txt"),
     Day4("Day4.txt"),
+    Day5("Day5.txt"),
     Day1("Day1.txt");
     final String path;
     Days(String path) {
