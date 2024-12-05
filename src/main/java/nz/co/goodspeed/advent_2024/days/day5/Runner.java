@@ -7,6 +7,8 @@ public class Runner {
     public static void main(String[] args) {
         Day5Loader loader = new Day5Loader();
         Model data = loader.buildType();
+        ConsolidateRulesV2 consolidateRulesV2 = new ConsolidateRulesV2(data.rules());
+        /*
         List<ConsolidateRules> consolidateRules = new ArrayList<>();
 
         for(Rule item: data.rules()) {
@@ -16,6 +18,9 @@ public class Runner {
                 consolidateRules.add(new ConsolidateRules(item.getFirst(), data.rules()));
             }
         }
+        */
+
+
 
 
         int total = 0;
@@ -25,13 +30,14 @@ public class Runner {
             if(page.isOrderedCorrectly(data.rules())) {
                 total += page.pageData.get(middle);
             } else {
-                part2Total +=page.orderCorrectlyWithCheck(consolidateRules, data.rules());
+                part2Total +=   page.orderCorrectlyWithCheck(consolidateRulesV2);
             }
         }
 
         System.out.println("Part 1: "+total);
 
         System.out.println("Part 2: "+part2Total);
+        System.out.println(consolidateRulesV2);
     }
 
 

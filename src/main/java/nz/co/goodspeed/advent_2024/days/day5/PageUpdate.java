@@ -109,11 +109,11 @@ public class PageUpdate {
         return Arrays.stream(newData).boxed().collect(Collectors.toList());
     }
 
-    public Integer orderCorrectlyWithCheck(List<ConsolidateRules> rules, List<Rule> allRules) {
-        List<Integer> ordered = new ArrayList<>();
-            List<Integer> tmp = new ArrayList<>(pageData);
-            ordered = orderCorrectly(tmp, rules);
-        return ordered.get(ordered.size() / 2);
+    public Integer orderCorrectlyWithCheck(ConsolidateRulesV2 rules) {
+        List<Integer> newSequence = new ArrayList<>(pageData);
+        for(int i = 0; i < pageData.size(); i++) {
+
+        }
     }
 
     @Override
